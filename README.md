@@ -96,6 +96,6 @@ LETTER = "A..Z" | "a..z" ;
 ```
 e o seu diagrama pode ser visto:
 
-![1713724030422](image/readme/1713724030422.png)
+![EBNF](EBNF.png)
 
   
