@@ -12,10 +12,9 @@ Bem-vindo ao Sabora, uma linguagem de programação única que combina a precis�
     contador = 0
     palavra = 'Arthur'
     
-    while args > 0:
-
-    contador += 1
-    args -= 1
+    while ((args > 0) or (contador < 20)):
+        contador += 1
+        args -= 1
 
     if contador == 5:
         print(palavra)
@@ -31,10 +30,11 @@ Bem-vindo ao Sabora, uma linguagem de programação única que combina a precis�
 ```Sabora
     receita 
 
+    20 g args
     0 g contador
     Arthur ml palavra
     
-    mexer enquanto ((argumento1 > 0) ou (contador < 27)),
+    mexer enquanto ((args > 0) ou (contador < 20)),
         incrementar contador
         decrementar argumento1
 
