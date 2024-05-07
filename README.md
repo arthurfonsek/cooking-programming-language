@@ -31,6 +31,7 @@ Bem-vindo ao Sabora, uma linguagem de programação única que combina a precis�
 
 ```Sabora
     receita 
+    {
 
     20 g args
     0 g contador
@@ -50,6 +51,8 @@ Bem-vindo ao Sabora, uma linguagem de programação única que combina a precis�
     pare de picar
 
     pare de mexer
+    
+    }
 ```
 
 ### Gramática
