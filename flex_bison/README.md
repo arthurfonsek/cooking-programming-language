@@ -75,7 +75,7 @@ FACTOR = INTEGER | IDENTIFIER | "(" , EXPRESSION , ")" | UNARY_OP, FACTOR ;
 
 PRINT = "servir", EXPRESSION;
 
-INPUT = "anotar", '"', EXPRESSION, '"', IDENTIFIER;
+INPUT = "anotar", '"', STRING, '"', IDENTIFIER;
 
 WHILE = "mexer enquanto", EXPRESSION, ",",  "\n", { STATEMENT },"\n", "pare de mexer" ;
 
@@ -96,8 +96,14 @@ UNARY_OP = "-" | "nao";
 DIGIT = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
 
 LETTER = "A..Z" | "a..z" ;
+
+STRING = "CARACTERE" | "SEQUENCIAESCAPE";
+
+CARACTERE = ? todos os caracteres exceto: ' " ' (aspas duplas) e  ' \ ' (contrabarra)  ? ;
+
+SEQUENCIAESCAPE = "\",  ( "'" | '\' | 'n' | 't' | 'r' | 'b' | 'f' );
 ```
 
 e o seu diagrama pode ser visto:
 
-![EBNF](EBNF.png)
+![EBNF](EBNF/EBNF.png)
