@@ -1,0 +1,5 @@
+receita {
+    20 g args;
+    0 g contador;
+    "Arthur" ml palavra;
+}

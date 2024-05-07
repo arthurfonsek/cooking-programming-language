@@ -1,0 +1,11 @@
+receita{
+    Rafael ml palavra;
+
+    picar se palavra == "Rafael",
+        servir palavra;
+    senao,
+        servir "Nao sei quem e";
+    pare de picar;
+
+    servir "Fim";
+}

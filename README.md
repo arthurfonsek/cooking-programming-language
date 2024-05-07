@@ -1,4 +1,5 @@
 # Linguagem de Programação: Sabora
+
 Bem-vindo ao Sabora, uma linguagem de programação única que combina a precisão da programação com a arte da culinária. Com Sabora, você pode expressar algoritmos complexos, estruturas de dados e lógica de programação usando a linguagem das receitas culinárias.
 
 * Sintaxe Intuitiva: Escreva código como se estivesse seguindo uma receita de culinária. Declarações, loops e condicionais são traduzidos para passos claros e simples.
@@ -7,11 +8,12 @@ Bem-vindo ao Sabora, uma linguagem de programação única que combina a precis�
 ### Exemplo de código
 
 *Python*
+
 ```Python
     args = 20
     contador = 0
     palavra = 'Arthur'
-    
+  
     while ((args > 0) or (contador < 20)):
         contador += 1
         args -= 1
@@ -33,7 +35,7 @@ Bem-vindo ao Sabora, uma linguagem de programação única que combina a precis�
     20 g args
     0 g contador
     Arthur ml palavra
-    
+  
     mexer enquanto ((args > 0) ou (contador < 20)),
         incrementar contador
         decrementar argumento1
@@ -50,17 +52,16 @@ Bem-vindo ao Sabora, uma linguagem de programação única que combina a precis�
     pare de mexer
 ```
 
-
 ### Gramática
 
 #### EBNF
 
 ```ebnf
-PROGRAM = "receita","\n", BLOCK ;
+PROGRAM = "receita", "{", BLOCK, "}";
 
-BLOCK = { STATEMENT } ;
+BLOCK = { STATEMENT, ";"} ;
 
-STATEMENT = ( ASSIGNMENT  | DECLARATION | PRINT | WHILE | IF ), "\n" ;
+STATEMENT = ( ASSIGNMENT  | DECLARATION | PRINT | INPUT | WHILE | IF ), "\n" ;
 
 DECLARATION = IDENTIFIER, TYPE;
 
@@ -74,11 +75,13 @@ FACTOR = INTEGER | IDENTIFIER | "(" , EXPRESSION , ")" | UNARY_OP, FACTOR ;
 
 PRINT = "servir", EXPRESSION;
 
+INPUT = "anotar", '"', EXPRESSION, '"', IDENTIFIER;
+
 WHILE = "mexer enquanto", EXPRESSION, ",",  "\n", { STATEMENT },"\n", "pare de mexer" ;
 
 IF = "picar se", EXPRESSION, ",", "\n", { STATEMENT }, "\n","pare de picar" ;
 
-TYPE = "g (int)" | "ml (string)";
+TYPE = "g" | "ml";
 
 LOGIC_OP = "tambem" | "ou" | "nao" ;
 
@@ -88,14 +91,13 @@ INTEGER = DIGIT, { DIGIT } ;
 
 IDENTIFIER = LETTER, { LETTER | DIGIT | "_" } ;
 
-UNARY_OP = "reverter" | "-" | "incrementar" | "decrementar";
+UNARY_OP = "-" | "nao";
 
 DIGIT = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
 
 LETTER = "A..Z" | "a..z" ;
 ```
+
 e o seu diagrama pode ser visto:
 
 ![EBNF](EBNF.png)
-
-  

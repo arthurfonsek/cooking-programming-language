@@ -1,0 +1,17 @@
+receita
+
+    anotar "Digite um numero inteiro:  \n" numero
+
+    numero g numero #transformar o numero de string para inteiro
+
+    picar se numero/2 == 0,
+        servir "O numero é divisivel por 2"
+    senao,
+        servir "O numero não é divisivel por 2"
+    pare de picar
+
+    mexer enquanto numero > 0,
+        servir numero
+        numero = numero - 1
+    pare de mexer
+
