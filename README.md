@@ -74,7 +74,7 @@ EXPRESSION = TERM, { ("+" | "-"), TERM } ;
 
 TERM = FACTOR, { ("*" | "/"), FACTOR } ;
 
-FACTOR = INTEGER | IDENTIFIER | "(" , EXPRESSION , ")" | UNARY_OP, FACTOR ;
+FACTOR = INTEGER | IDENTIFIER | "[" , EXPRESSION , "]" | UNARY_OP, FACTOR ;
 
 PRINT = "servir", EXPRESSION;
 
