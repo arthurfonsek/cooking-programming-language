@@ -1,10 +1,10 @@
 receita  {
-
+    --assim se faz um comentario
     20 g args;
     0 g contador;
     Arthur ml palavra;
     
-    mexer enquanto ((args > 0) ou (contador < 20)),
+    mexer enquanto [[args > 0] ou [contador < 20]],
         contador = contador + 1;
 
         picar se contador == 5,
