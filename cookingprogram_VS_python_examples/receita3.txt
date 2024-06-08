@@ -1,8 +1,8 @@
-receita {
+receita
 
-    anotar "" numero
+    anotar "Digite um numero inteiro:  \n" numero
 
-    numero g numero  --transformar o numero de string para inteiro
+    numero g numero #transformar o numero de string para inteiro
 
     picar se numero/2 == 0,
         servir "O numero é divisivel por 2"
@@ -14,4 +14,4 @@ receita {
         servir numero
         numero = numero - 1
     pare de mexer
-}
+

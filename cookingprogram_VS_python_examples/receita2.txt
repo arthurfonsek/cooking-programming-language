@@ -1,15 +1,11 @@
-receita {
-    
-    --comentario
+receita
 
     Rafael ml palavra
-    2 g numero
 
-    picar se palavra == "Rafael" tambem nao numero == 5,
+    picar se palavra == "Rafael",
         servir palavra
     senao,
         servir "Nao sei quem e"
     pare de picar
 
     servir "Fim"
-}

@@ -2,4 +2,7 @@ receita {
     20 g args;
     0 g contador;
     "Arthur" ml palavra;
+    servir args;
+    servir contador+1;
+    servir palavra;
 }
