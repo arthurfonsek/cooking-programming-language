@@ -1,11 +1,12 @@
-receita
+receita {
 
-    Rafael ml palavra
+    palavra : "Donuts";
 
-    picar se palavra == "Rafael",
-        servir palavra
+    picar se palavra == "Donuts",
+        servir palavra;
     senao,
-        servir "Nao sei quem e"
-    pare de picar
+        servir "É muffin!";
+    pare de picar;
 
-    servir "Fim"
+    servir "Fim";
+}

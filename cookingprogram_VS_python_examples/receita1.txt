@@ -1,19 +1,18 @@
 receita  {
-
-    20 g args;
-    0 g contador;
-    Arthur ml palavra;
+    args : 20 g;
+    contador : 0 g;
+    palavra : "burrata";
     
-    mexer enquanto ((args > 0) ou (contador < 20)),
+    mexer enquanto [[args > 0] ou [contador < 20]],
         contador = contador + 1;
 
         picar se contador == 5,
             servir palavra;
-            0 g contador;
+            contador : 0 g;
         pare de picar;
 
         picar se contador == 3,
-            servir "Python";
+            servir "sobremesa";
         pare de picar;
 
     pare de mexer;
