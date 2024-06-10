@@ -1,0 +1,46 @@
+PROGRAM = "receita", "{", BLOCK, "}";
+
+BLOCK = { STATEMENT, "\n" };
+
+STATEMENT = ( ASSIGNMENT | PRINT | INPUT | WHILE | IF );
+
+ASSIGNMENT = IDENTIFIER, ":", BOOL_EXPRESSION, TYPE;
+
+PRINT = "servir", BOOL_EXPRESSION;
+
+INPUT = "anotar", STRING, IDENTIFIER;
+
+WHILE = "mexer enquanto", BOOL_EXPRESSION, ",", "\n", { STATEMENT, "\n" }, "pare de mexer";
+
+IF = "picar se", BOOL_EXPRESSION, ",", "\n", { STATEMENT, "\n" }, [ "senao", ",", "\n", { STATEMENT, "\n" } ], "pare de picar";
+
+BOOL_EXPRESSION = BOOL_TERM, { "ou", BOOL_TERM };
+
+BOOL_TERM = REL_EXPRESSION, { "tambem", REL_EXPRESSION };
+
+REL_EXPRESSION = EXPRESSION, [ (">" | "<" | "=="), EXPRESSION ];
+
+EXPRESSION = TERM, { ("+" | "-"), TERM };
+
+TERM = FACTOR, { ("*" | "/"), FACTOR };
+
+FACTOR = INTEGER | IDENTIFIER | "[", BOOL_EXPRESSION, "]" | UNARY_OP, FACTOR;
+
+TYPE = "g" | "ml";
+
+UNARY_OP = "-" | "nao";
+
+STRING = '"', { CARACTER | ESCAPE_SEQUENCE }, '"';
+
+INTEGER = DIGIT, { DIGIT };
+
+IDENTIFIER = LETTER, { LETTER | DIGIT | "_" };
+
+DIGIT = "0...9";
+
+LETTER = "A...Z" 
+       | "a...z";
+
+CARACTER = ? qualquer caractere exceto: ' " ' (aspas duplas) e  ' \ ' (contrabarra) ? ;
+
+ESCAPE_SEQUENCE = "\", ( '"' | '\' | 'n' | 't' | 'r' | 'b' | 'f' );
