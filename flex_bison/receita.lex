@@ -1,44 +1,59 @@
 %{
-#include "receita.tab.h"
+# include "receita.tab.h"
 %}
 
-%option noyywrap
+IDENT  [a-zA-Z_][a-zA-Z0-9_]*
+NUMBER [0-9]+
+STRING \".*\"
 
 %%
 
-"receita"           { return RECEITA; }
-"{"                 { return LBRACE; }
-"}"                 { return RBRACE; }
-":"                 { return COLON; }
-"servir"            { return SERVIR; }
-"anotar"            { return ANOTAR; }
-"mexer enquanto"    { return MEXERENQUANTO; }
-"pare de mexer"     { return PAREDEMEXER; }
-"picar se"          { return PICARSE; }
-"senao"             { return SENAO; }
-"pare de picar"     { return PAREDEPICAR; }
-"tambem"            { return TAMBEM; }
-"ou"                { return OU; }
-"=="                { return EQUAL; }
-">"                 { return GREATER; }
-"<"                 { return LESS; }
-"g"                 { return G; }
-"ml"                { return ML; }
-"nao"               { return NAO; }
-"-"                 { return MINUS; }
-"\\["               { return LBRACKET; }
-"\\]"               { return RBRACKET; }
-"+"                 { return PLUS; }
-"*"                 { return MULTIPLY; }
-"/"                 { return DIVIDE; }
-[0-9]+              { yylval.intval = atoi(yytext); return INTEGER; }
-\"(\\.|[^\"])*\"    { yylval.strval = strdup(yytext); return STRING; }
-[a-zA-Z_][a-zA-Z0-9_]* { yylval.strval = strdup(yytext); return IDENTIFIER; }
-[ \t\n]+            { /* ignore whitespace */ }
-.                   { /* ignore any other character */ }
+[ \t\n\r]
+";"  { return SEMICOLON; }
+":" { return COLON; }
+"+"  { return PLUS; }
+"-"  { return MINUS; }
+"*"  { return STAR; }
+"/"  { return SLASH; }
+"["  { return LPAREN; }
+"]"  { return RPAREN; }
+"{" { return LBRACE; }
+"}" { return RBRACE; }
+"==" { return EQ; }
+"<"  { return LT; }
+">"  { return GT; }
+","  { return COMMA; }
+"="  { return ASSIGN; }
 
-%%
+receita { return RECEITA; }
+g { return G; }
+ml { return ML; }
+tambem { return TAMBEM; }
+ou { return OU; }
+nao { return NAO; }
+senao { return SENAO; }
+mexer { return MEXER; }
+enquanto { return ENQUANTO; }
+pare { return PARE; }
+de { return DE; }
+picar { return PICAR; }
+se { return SE; }
+servir { return SERVIR; }
+anotar { return ANOTAR; }
 
-int yywrap() {
-    return 1;
+{IDENT} {
+    return IDENT;
 }
+
+{NUMBER} {
+    yylval = atoi(yytext);
+    return NUMBER;
+}
+
+{STRING} {
+    return STRING;
+}
+
+. { return yytext[0]; }
+
+%%
